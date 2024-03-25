@@ -1,0 +1,18 @@
+
+
+h1{
+    text-align: center;
+    margin-bottom: 3vw;
+}
+.text-center{
+    margin-top: 3vw;
+}
+.card{
+    margin: 5vw 32vw;
+    width: 20vw;
+    text-align: center;
+}
+.card-img-top{
+    width: 15vw;
+    height: 15vw;
+}
