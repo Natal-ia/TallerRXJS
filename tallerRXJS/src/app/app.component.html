@@ -23,4 +23,8 @@
       <ng-container *ngIf="!usuario && buttonClicked">
         <p class="text-center">No se encontraron resultados.</p>
       </ng-container>
+
+      <ng-container *ngIf="usuario && buttonClicked">
+        <app-posts [user]="usuario"></app-posts>
+      </ng-container>
 </div>

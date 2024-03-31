@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './models/User';
+import { mergeMap } from 'rxjs';
+import { Post } from './models/Post';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   buttonClicked: boolean = false;
   ROOT_URL = 'https://dummyjson.com';
