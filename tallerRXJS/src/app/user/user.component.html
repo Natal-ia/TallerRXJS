@@ -1,0 +1,10 @@
+<!-- user.component.html -->
+<div *ngIf="user" class="card">
+    <div class="card-body">
+      <img class="card-img-top" src="{{user.image}}" alt="Card image cap">
+      <h4 class="card-title">{{user.firstName}} {{user.lastName}}</h4>
+      <p class="card-text">Edad: {{user.age}}</p>
+      <p class="card-text">Genero: {{user.gender}}</p>
+      <p class="card-text">Nombre de usuario: {{user.username}}</p>
+    </div>
+</div>

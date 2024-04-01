@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PostsComponent } from './posts/posts.component'; // Corrected here
+import { PostsComponent } from './posts/posts.component';
+import { UserComponent } from './user/user.component'; // Corrected here
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

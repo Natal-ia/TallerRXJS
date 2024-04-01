@@ -10,21 +10,14 @@
       </div>
     </form>
 
-      <div *ngIf="usuario" class="card">
-        <div class="card-body">
-          <img class="card-img-top" src="{{usuario.image}}" alt="Card image cap">
-          <h4 class="card-title">{{usuario.firstName}} {{usuario.lastName}}</h4>
-          <p class="card-text">Edad: {{usuario.age}}</p>
-          <p class="card-text">Genero: {{usuario.gender}}</p>
-          <p class="card-text">Nombre de usuario: {{usuario.username}}</p>
-        </div>
-      </div>
+    
 
       <ng-container *ngIf="!usuario && buttonClicked">
         <p class="text-center">No se encontraron resultados.</p>
       </ng-container>
 
       <ng-container *ngIf="usuario && buttonClicked">
+        <app-user [user]="usuario"></app-user>
         <app-posts [user]="usuario"></app-posts>
       </ng-container>
 </div>
