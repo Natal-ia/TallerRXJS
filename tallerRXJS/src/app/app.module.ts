@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
-import { UserComponent } from './user/user.component'; // Corrected here
+import { UserComponent } from './user/user.component';
+import { CommentsComponent } from './comments/comments.component'; // Corrected here
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    UserComponent
+    UserComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

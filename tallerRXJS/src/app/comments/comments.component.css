@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    margin-bottom: 3vw;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+  
+.card-footer svg{
+    margin : 1px 5px 0 0;
+}

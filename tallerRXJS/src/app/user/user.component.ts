@@ -16,4 +16,6 @@ export class UserComponent{
   @Input() user!: User; // Define the type of 'user'
   constructor(private http: HttpClient) {}
 
+
+
 }
