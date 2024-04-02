@@ -15,15 +15,24 @@
 
           {{publicacion.reactions}}
 
-        </div>
-        <div *ngIf="post">
-          <h1>Comments</h1>
-          <app-comments [post]="post"></app-comments>
-        </div>
-      </div>
+        </div>   
+        <h3>Comentarios:</h3>
+          <div *ngIf="comentarios[publicacion.id] && comentarios[publicacion.id].length > 0; else noCommentsMessage">
+            <div *ngFor="let comentario of comentarios[publicacion.id]"  class="card mb-3">
+              <div class="card-body">
+              <strong>{{comentario.username}}</strong> dice: {{ comentario.body }}
+              </div>
+            </div>
+          </div>
+        <ng-template #noCommentsMessage>
+            <p>No hay comentarios.</p>
+        </ng-template>
     </div>
-  </div>
+    
+      
+      </div>
 
+  </div>
   <ng-template #noPostsMessage>
     <p>No hay publicaciones disponibles.</p>
   </ng-template>
