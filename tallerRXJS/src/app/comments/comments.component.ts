@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Comment } from '../models/Comment';
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -9,6 +10,7 @@ import { Comment } from '../models/Comment';
 export class CommentsComponent implements OnChanges {
  
   @Input() user!: { id: number }; // Define the type of 'user'
+  @Input() post!: { id: number }; // Define the type of 'post'
   ROOT_URL = 'https://dummyjson.com';
   publicaciones: Comment[] = [];
   constructor(private http: HttpClient) {}
@@ -20,7 +22,7 @@ export class CommentsComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['user'] && !changes['user'].firstChange) {
+    if (changes['post'] && !changes['post'].firstChange) {
       this.getCommentsByPost();
     }
   }
@@ -40,7 +42,7 @@ export class CommentsComponent implements OnChanges {
 
   getCommentsByPost() {
     this.http
-      .get<any>(this.ROOT_URL + '/comments/post/' + this.user.id)
+      .get<any>(this.ROOT_URL + '/comments/post/' + this.post.id)
       .subscribe((response: any) => {
         if (response && response.comments) {
           this.publicaciones = response.comments;

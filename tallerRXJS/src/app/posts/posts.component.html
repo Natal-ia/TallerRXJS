@@ -1,27 +1,30 @@
 <div class="container mt-5">
-    <h1>Posts</h1>
-  
-    <div *ngIf="publicaciones && publicaciones.length > 0; else noPostsMessage">
-      <div *ngFor="let publicacion of publicaciones" class="card mb-3">
-        <div class="card-body">
-          <h4 class="card-title">{{publicacion.title}}</h4>
-          <p class="card-text">{{publicacion.body}}</p>
-          <div class="card-footer text-muted">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ff75a0" class="bi bi-heart-fill icon" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-            </svg>
-            <div *ngIf="user">
-              <h1>Comments</h1>
-              <app-comments [user]="user"></app-comments>
-          </div>
-            {{publicacion.reactions}}
-          </div>
+  <h1>Posts</h1>
+
+  <div *ngIf="publicaciones && publicaciones.length > 0; else noPostsMessage">
+    <div *ngFor="let publicacion of publicaciones" class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">{{publicacion.title}}</h4>
+        <p class="card-text">{{publicacion.body}}</p>
+        <div class="card-footer text-muted">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="#ff75a0" class="bi bi-heart-fill icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+          </svg>
+
+          {{publicacion.reactions}}
+
+        </div>
+        <div *ngIf="post">
+          <h1>Comments</h1>
+          <app-comments [post]="post"></app-comments>
         </div>
       </div>
     </div>
-  
-    <ng-template #noPostsMessage>
-      <p>No hay publicaciones disponibles.</p>
-    </ng-template>
   </div>
-  
+
+  <ng-template #noPostsMessage>
+    <p>No hay publicaciones disponibles.</p>
+  </ng-template>
+</div>

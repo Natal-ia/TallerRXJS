@@ -17,7 +17,10 @@
       </ng-container>
 
       <ng-container *ngIf="usuario && buttonClicked">
-        <app-user [user]="usuario"></app-user>
+        <div class="">
+          <app-user [user]="usuario"></app-user>
+
+        </div>
         <app-posts [user]="usuario"></app-posts>
       </ng-container>
 </div>

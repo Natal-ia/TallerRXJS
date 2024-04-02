@@ -8,10 +8,17 @@ import { Post } from '../models/Post';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnChanges {
+
+
+  
   @Input() user!: { id: number }; // Define the type of 'user'
+ 
+  @Input() post!: Post; // Define la propiedad 'post' y su tipo de dato
+
 
   ROOT_URL = 'https://dummyjson.com';
   publicaciones: Post[] = [];
+ // @Input() post!:{ id: number };  // Asegúrate de que el tipo de dato coincida con lo que esperas recibir
 
   constructor(private http: HttpClient) {}
 
